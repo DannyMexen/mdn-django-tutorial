@@ -7,7 +7,7 @@ class Genre(models.Model):
     """Model representing a book genre."""
 
     name = models.CharField(
-        max_length=200, help_text="Enter a book genre (e.g. Science Fiction"
+        max_length=200, help_text="Enter a book genre (e.g. Science Fiction)"
     )
 
     def __str__(self):
@@ -52,7 +52,7 @@ class Book(models.Model):
     genre = models.ManyToManyField(Genre, help_text="Select a genre for this book")
 
     def __str__(self):
-        """String for the representing the Model object."""
+        """String for representing the Model object."""
         return self.title
 
     def get_absolute_url(self):
@@ -95,7 +95,7 @@ class BookInstance(models.Model):
 
     def __str__(self):
         """String for representing the model object."""
-        return f"{self.id} ({self.book,title})"
+        return f"{self.id} ({self.book.title})"
 
 
 class Author(models.Model):
